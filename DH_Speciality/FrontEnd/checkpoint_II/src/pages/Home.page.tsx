@@ -6,9 +6,9 @@
  * @returns Home page
  */
 
-import { CharactersGrid } from '../componentes/characters/charactersGrid.component';
-import { Filter } from '../componentes/characters/filters.character';
 import { Pagination } from '../componentes/pagination/pagination.component';
+import { Filter } from '../componentes/characters/filters.character';
+import { CharactersGrid } from '../componentes/characters/charactersGrid.component';
 
 export function HomePage() {
   return (
