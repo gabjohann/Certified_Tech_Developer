@@ -6,6 +6,7 @@
  * @returns {TSX.Element}
  */
 
+import { Link } from 'react-router-dom';
 import '../buttons/favoriteButton.component';
 import { FavoriteButton } from '../buttons/favoriteButton.component';
 
@@ -40,7 +41,9 @@ export function CharacterCard({
         height={300}
       />
       <div className='px-2 py-2 flex items-center justify-between'>
-        <span>{name}</span>
+        <Link to={`/details/${id}`}>
+          <button>{name}</button>
+        </Link>
 
         <FavoriteButton
           click={handleFavoriteButtonClick}

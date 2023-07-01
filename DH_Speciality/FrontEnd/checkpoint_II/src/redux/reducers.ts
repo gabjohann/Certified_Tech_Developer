@@ -38,8 +38,8 @@ export const characterFilterData = createAsyncThunk(
 
 export const characterDetailsData = createAsyncThunk(
   'character/characterDetailsData',
-  async (_id: any) => {
-    const result = await fetchCharactersDetails(_id);
+  async (id: string) => {
+    const result = await fetchCharactersDetails(id);
 
     return result;
   }
@@ -84,7 +84,7 @@ const characters = createSlice({
     ) => {
       const characterId = action.payload;
 
-      state.favorites = state.favorites.filter((_id) => _id !== characterId);
+      state.favorites = state.favorites.filter((id) => id !== characterId);
     },
   },
 

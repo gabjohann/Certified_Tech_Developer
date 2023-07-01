@@ -22,9 +22,6 @@ export function Header() {
             <li>
               <Link to='/favorites'>Favoritos</Link>
             </li>
-            <li>
-              <Link to='/details'>Detalhes</Link>
-            </li>
           </ul>
         </nav>
       </header>

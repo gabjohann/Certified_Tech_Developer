@@ -1,7 +1,7 @@
 import { api } from './api';
 
 export interface CharacterProps {
-  _id: number;
+  id: number;
   name: string;
   air_date: string;
   episodes: string;
@@ -16,13 +16,15 @@ export async function fetchCharacters() {
   return response.data;
 }
 export async function fetchFilterCharacters(filters: object) {
-  const response = await api.get('/character', { params: filters });
+  const params = filters;
+
+  const response = await api.get('/character', { params });
 
   return response.data;
 }
 
-export async function fetchCharactersDetails(_id: string) {
-  const response = await api.get(`/character/${_id}`);
+export async function fetchCharactersDetails(id: string) {
+  const response = await api.get(`/character/${id}`);
 
   return response.data;
 }
