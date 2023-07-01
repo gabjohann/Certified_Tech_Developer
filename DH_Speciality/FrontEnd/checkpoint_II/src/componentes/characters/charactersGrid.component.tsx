@@ -7,15 +7,15 @@
  * @returns {TSX.Element}
  */
 
-import { useEffect, useState } from 'react';
-import { useAppDispatch, useAppSelector } from '../../redux/hooks';
+import { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import {
   addToFavoritesList,
   characterData,
   removeFromFavoritesList,
-} from '../../redux/reducers';
-import { RootState } from '../../redux/store';
-import { CharacterCard } from './characterCard.component';
+} from "../../redux/reducers";
+import { RootState } from "../../redux/store";
+import { CharacterCard } from "./characterCard.component";
 
 export function CharactersGrid() {
   const dispatch = useAppDispatch();
@@ -25,8 +25,6 @@ export function CharactersGrid() {
     favorites,
   }: { characters: any; loading: boolean; favorites: boolean[] } =
     useAppSelector((state: RootState) => state.characters);
-
-  const [inputValue, setInputValue] = useState('');
 
   useEffect(() => {
     dispatch(characterData());
@@ -41,7 +39,7 @@ export function CharactersGrid() {
   };
 
   return (
-    <div className='grid grid-cols-3 gap-5 justify-items-center'>
+    <div className="grid grid-cols-3 justify-items-center gap-5">
       {characters.results?.map((character: any) => {
         const favorite = favorites.includes(character.id);
 

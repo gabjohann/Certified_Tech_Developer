@@ -1,4 +1,4 @@
-import { api } from './api';
+import { api } from "./api";
 
 export interface CharacterProps {
   id: number;
@@ -11,14 +11,14 @@ export interface CharacterProps {
 }
 
 export async function fetchCharacters() {
-  const response = await api.get('/character');
+  const response = await api.get("/character");
 
   return response.data;
 }
 export async function fetchFilterCharacters(filters: object) {
   const params = filters;
 
-  const response = await api.get('/character', { params });
+  const response = await api.get("/character", { params });
 
   return response.data;
 }

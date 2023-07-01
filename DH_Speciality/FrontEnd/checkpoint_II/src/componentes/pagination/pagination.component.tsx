@@ -9,12 +9,12 @@
 
 export function Pagination({ nextPage, previousPage }: any) {
   return (
-    <div className='flex items-center justify-between my-3'>
+    <div className="my-3 flex items-center justify-between">
       <button
         onClick={previousPage}
         className={`${
-          previousPage ? 'bg-enableColor' : 'bg-disableColor'
-        } text-white text-base font-medium px-5 py-2 rounded-md`}
+          previousPage ? "bg-enableColor" : "bg-disableColor"
+        } rounded-md px-5 py-2 text-base font-medium text-white`}
       >
         Anterior
       </button>
@@ -22,7 +22,7 @@ export function Pagination({ nextPage, previousPage }: any) {
       {nextPage && (
         <button
           onClick={nextPage}
-          className='bg-enableColor text-white text-base font-medium px-5 py-2 rounded-md '
+          className="rounded-md bg-enableColor px-5 py-2 text-base font-medium text-white"
         >
           Próximo
         </button>

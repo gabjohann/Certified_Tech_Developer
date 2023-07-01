@@ -1,11 +1,11 @@
-import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import {
   fetchCharacters,
   fetchCharactersDetails,
   fetchFavorite,
   fetchFilterCharacters,
   fetchPagination,
-} from '../services/routes';
+} from "../services/routes";
 
 export interface CharactersState {
   characters: string[];
@@ -20,7 +20,7 @@ const initialState = {
 };
 
 export const characterData = createAsyncThunk(
-  'character/characterData',
+  "character/characterData",
   async () => {
     const result = await fetchCharacters();
 
@@ -28,7 +28,7 @@ export const characterData = createAsyncThunk(
   }
 );
 export const characterFilterData = createAsyncThunk(
-  'character/characterFilterData',
+  "character/characterFilterData",
   async (filters: object) => {
     const result = await fetchFilterCharacters(filters);
 
@@ -37,7 +37,7 @@ export const characterFilterData = createAsyncThunk(
 );
 
 export const characterDetailsData = createAsyncThunk(
-  'character/characterDetailsData',
+  "character/characterDetailsData",
   async (id: string) => {
     const result = await fetchCharactersDetails(id);
 
@@ -46,7 +46,7 @@ export const characterDetailsData = createAsyncThunk(
 );
 
 export const fetchCharacterPagination = createAsyncThunk(
-  'character/fetchCharacterPagination',
+  "character/fetchCharacterPagination",
   async (number: number) => {
     const result = await fetchPagination(number);
 
@@ -55,7 +55,7 @@ export const fetchCharacterPagination = createAsyncThunk(
 );
 
 export const fetchCharactersFavorites = createAsyncThunk(
-  'character/fetchCharactersFavorites',
+  "character/fetchCharactersFavorites",
   async (number: number[]) => {
     const result = await fetchFavorite(number);
 
@@ -64,7 +64,7 @@ export const fetchCharactersFavorites = createAsyncThunk(
 );
 
 const characters = createSlice({
-  name: 'character',
+  name: "character",
   initialState,
   reducers: {
     addToFavoritesList: (

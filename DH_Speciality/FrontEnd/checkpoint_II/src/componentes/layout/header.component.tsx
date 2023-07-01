@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 /**
  * Header that contains links to navigate between pages
  *
@@ -7,20 +6,22 @@ import { Link } from 'react-router-dom';
  * @returns {TSX.Element}
  */
 
+import { Link } from "react-router-dom";
+
 export function Header() {
   return (
     <>
-      <header className='flex items-center justify-between px-7 py-6 border-b border-lineColor w-full'>
+      <header className="flex w-full items-center justify-between border-b border-lineColor px-7 py-6">
         <div>
-          <h1 className='font-bold text-2xl'>Checkpoint Front-end IV</h1>
+          <h1 className="text-2xl font-bold">Checkpoint Front-end IV</h1>
         </div>
         <nav>
-          <ul className='flex items-center justify-between gap-5 font-medium text-base'>
+          <ul className="flex items-center justify-between gap-5 text-base font-medium">
             <li>
-              <Link to='/'>Início</Link>
+              <Link to="/">Início</Link>
             </li>
             <li>
-              <Link to='/favorites'>Favoritos</Link>
+              <Link to="/favorites">Favoritos</Link>
             </li>
           </ul>
         </nav>

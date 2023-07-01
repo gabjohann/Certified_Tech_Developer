@@ -6,13 +6,13 @@
  * @returns Home page
  */
 
-import { Pagination } from '../componentes/pagination/pagination.component';
-import { Filter } from '../componentes/characters/filters.character';
-import { CharactersGrid } from '../componentes/characters/charactersGrid.component';
-import { useAppDispatch, useAppSelector } from '../redux/hooks';
-import { RootState } from '../redux/store';
-import { useEffect, useState } from 'react';
-import { fetchCharacterPagination } from '../redux/reducers';
+import { Pagination } from "../componentes/pagination/pagination.component";
+import { Filter } from "../componentes/characters/filters.character";
+import { CharactersGrid } from "../componentes/characters/charactersGrid.component";
+import { useAppDispatch, useAppSelector } from "../redux/hooks";
+import { RootState } from "../redux/store";
+import { useEffect, useState } from "react";
+import { fetchCharacterPagination } from "../redux/reducers";
 
 export function HomePage() {
   const dispatch = useAppDispatch();
@@ -44,8 +44,8 @@ export function HomePage() {
   }
 
   return (
-    <div className='p-6 mx-auto my-0'>
-      <h1 className='text-2xl font-bold'>Catálogo de Personagens</h1>
+    <div className="mx-auto my-0 p-6">
+      <h1 className="text-2xl font-bold">Catálogo de Personagens</h1>
 
       <Filter />
       <Pagination

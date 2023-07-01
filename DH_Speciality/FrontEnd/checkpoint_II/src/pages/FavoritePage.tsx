@@ -1,8 +1,8 @@
-import { useAppDispatch, useAppSelector } from '../redux/hooks';
-import { RootState } from '../redux/store';
-import { useEffect } from 'react';
-import { fetchCharactersFavorites } from '../redux/reducers';
-import { Heart } from '@phosphor-icons/react';
+import { useAppDispatch, useAppSelector } from "../redux/hooks";
+import { RootState } from "../redux/store";
+import { useEffect } from "react";
+import { fetchCharactersFavorites } from "../redux/reducers";
+import { Heart } from "@phosphor-icons/react";
 
 export function FavoritePage() {
   const dispatch = useAppDispatch();
@@ -18,14 +18,14 @@ export function FavoritePage() {
   }, [dispatch, favorites]);
 
   return (
-    <div className='p-7 mx-0 my-auto'>
-      <div className='flex justify-between items-center'>
+    <div className="mx-0 my-auto p-7">
+      <div className="flex items-center justify-between">
         {favorites.length === 0 ? (
           <p>Não há favoritos selecionados</p>
         ) : (
           <ul
             key={characters.id}
-            className='grid grid-cols-3 gap-5 justify-items-center'
+            className="grid grid-cols-3 justify-items-center gap-5"
           >
             {characters.results?.map((character: any) => {
               const { id, name, image } = character;
@@ -34,18 +34,18 @@ export function FavoritePage() {
 
               if (isFavorite) {
                 return (
-                  <div className='border border-lineColor rounded-md max-w-[300px]'>
+                  <div className="max-w-[300px] rounded-md border border-lineColor">
                     <img
                       src={image}
                       alt={`Image of character ${name}`}
-                      className='overflow-clip'
+                      className="overflow-clip"
                       width={300}
                       height={300}
                     />
-                    <div className='px-2 py-2 flex items-center justify-between'>
+                    <div className="flex items-center justify-between px-2 py-2">
                       <span>{name}</span>
 
-                      <Heart size={32} weight='fill' color='#EE4A2D' />
+                      <Heart size={32} weight="fill" color="#EE4A2D" />
                     </div>
                   </div>
                 );
