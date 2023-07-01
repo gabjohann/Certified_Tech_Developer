@@ -59,14 +59,3 @@ export function CharactersGrid() {
     </div>
   );
 }
-
-/* 
-      <ul>
-        {character.results?.map((character) => (
-          <CharacterCard
-            key={character.id}
-            image={character.image}
-            name={character.name}
-          />
-        ))}
-      </ul> */
